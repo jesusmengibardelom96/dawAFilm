@@ -25,13 +25,17 @@ export class AuthenticationService {
       console.log(newCredential);
     }).catch(error => {
       console.log(error);
-      throw new Error(error.message);
+      throw new Error(error);
     });
   }
 
-  async presentToast() {
+  async resetPasswd (mail:string){
+    return this.fAuth.auth.sendPasswordResetEmail(mail);
+  }
+
+  async presentToast(mensaje:string) {
     const toast = await this.toast.create({
-      message: 'You logged in correctly.',
+      message: mensaje,
       duration: 3000,
       position: 'middle',
       color: 'success'

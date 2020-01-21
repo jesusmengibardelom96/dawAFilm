@@ -1,9 +1,13 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>loggedin</ion-title>
+    <ion-title>Welcome page</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-<p>U logged in</p>
+<p>Welcome, {{email}}</p>
+<ion-button expand="block" (click)="logIn()" *ngIf = "this.user === null; else elseBlock">{{nameButton}}</ion-button>
+<ng-template #elseBlock>
+  <ion-button expand="block" (click)="logOut()">{{nameButton}}</ion-button>
+</ng-template>
 </ion-content>
