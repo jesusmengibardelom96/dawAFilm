@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthenticationService } from '../services/authentication.service';
-
+import { FirestoreService } from '../services/firestore.service';
 @Component({
   selector: 'app-register',
   templateUrl: './register.page.html',
@@ -15,7 +15,7 @@ export class RegisterPage implements OnInit {
   labelMsg: string = "";
   validator: boolean = true;
 
-  constructor(private router: Router, private afAuth: AuthenticationService) { }
+  constructor(private router: Router, private afAuth: AuthenticationService, private fire: FirestoreService) { }
 
   ngOnInit() {
   }
@@ -37,6 +37,12 @@ export class RegisterPage implements OnInit {
         }, error => {
           console.log(error);
         });
+        let user = {
+          id: this.fire.generateId(),
+          mail: this.name,
+          pass: this.passwd
+        }
+        this.fire.createUser(user);
       this.name = "";
       this.passwd = "";
       this.router.navigateByUrl("home");

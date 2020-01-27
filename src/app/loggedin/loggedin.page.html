@@ -9,5 +9,6 @@
 <ion-button expand="block" (click)="logIn()" *ngIf = "this.user === null; else elseBlock">{{nameButton}}</ion-button>
 <ng-template #elseBlock>
   <ion-button expand="block" (click)="logOut()">{{nameButton}}</ion-button>
+  <ion-button expand="block" (click)="addMovie()">Add Movie</ion-button>
 </ng-template>
 </ion-content>

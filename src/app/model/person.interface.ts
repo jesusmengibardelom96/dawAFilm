@@ -1,7 +1,7 @@
 export interface Person{
     mail : string;
     password: string;
-    name: string;
+    /* name: string;
     age: number;
-    photo: string;
+    photo: string; */
 }

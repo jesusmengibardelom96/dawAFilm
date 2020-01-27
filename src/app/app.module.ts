@@ -13,6 +13,7 @@ import {firebaseConfig } from './../environments/environment';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AuthenticationService } from './services/authentication.service';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { AuthenticationService } from './services/authentication.service';
   IonicModule.forRoot(),
   AppRoutingModule,
   AngularFireModule.initializeApp(firebaseConfig, 'dawAFilm'),
-  AngularFireAuthModule
+  AngularFireAuthModule,
+  AngularFirestoreModule
   ],
   providers: [
     StatusBar,

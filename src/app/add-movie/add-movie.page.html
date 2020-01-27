@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar class="ion-text-center" color="secondary">
+    <ion-buttons slot="start">
+      <ion-button (click)="backMain()">
+        <ion-icon name="arrow-round-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Add new movie</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-text-center">
+  <ion-item class="buttons">
+    <ion-label position="floating"> Name: </ion-label>
+    <ion-input placeholder="Put the name of the movie" [(ngModel)]="name"></ion-input>
+  </ion-item>
+  <ion-item class="buttons">
+    <ion-label position="floating"> Type: </ion-label>
+    <ion-input placeholder="Put the type of the movie" [(ngModel)]="type"></ion-input>
+  </ion-item>
+  <ion-item class="buttons">
+    <ion-label position="floating"> Actors: </ion-label>
+    <ion-input placeholder="Put the actors of the movie" [(ngModel)]="actor"></ion-input>
+  </ion-item>
+
+  <ion-button expand="block" class="buttons" color="success" (click)="sendToMain()">
+    <ion-label class="inputLabels">Save</ion-label>
+  </ion-button>
+</ion-content>

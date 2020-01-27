@@ -38,4 +38,8 @@ export class LoggedinPage implements OnInit {
     }
   }
 
+  addMovie(){
+    this.router.navigateByUrl("add-movie");
+  }
+
 }

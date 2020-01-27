@@ -16,6 +16,10 @@ const routes: Routes = [
     path: 'loggedin',
     loadChildren: () => import('./loggedin/loggedin.module').then( m => m.LoggedinPageModule)
   },
+  {
+    path: 'add-movie',
+    loadChildren: () => import('./add-movie/add-movie.module').then( m => m.AddMoviePageModule)
+  },
 ];
 
 @NgModule({
