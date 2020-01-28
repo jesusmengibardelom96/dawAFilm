@@ -5,10 +5,15 @@
 </ion-header>
 
 <ion-content>
-<p>Welcome, {{email}}</p>
-<ion-button expand="block" (click)="logIn()" *ngIf = "this.user === null; else elseBlock">{{nameButton}}</ion-button>
-<ng-template #elseBlock>
-  <ion-button expand="block" (click)="logOut()">{{nameButton}}</ion-button>
-  <ion-button expand="block" (click)="addMovie()">Add Movie</ion-button>
-</ng-template>
+  <p>Welcome, {{email}}</p>
+  <ion-button expand="block" (click)="logIn()" *ngIf="this.user === null; else elseBlock">{{nameButton}}</ion-button>
+  <ng-template #elseBlock>
+    <ion-list>
+      <ion-item *ngFor="let movie of movies">
+      <ion-label>{{movie.name}}</ion-label>
+      </ion-item>
+    </ion-list>
+    <ion-button expand="block" (click)="logOut()">{{nameButton}}</ion-button>
+    <ion-button expand="block" (click)="addMovie()">Add Movie</ion-button>
+  </ng-template>
 </ion-content>
